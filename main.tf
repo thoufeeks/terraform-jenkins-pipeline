@@ -60,7 +60,7 @@ resource "aws_security_group" "web-sg" {
 
 resource "aws_instance" "web" {
   ami                    = "ami-0236922087fa98b6e"  # Amazon Linux 2 AMI (for us-east-1, adjust as needed)
-  instance_type          = "t2.medium"
+  instance_type          = "t2.micro"
   subnet_id              = aws_subnet.main.id
   vpc_security_group_ids = [aws_security_group.web-sg.id]  # Use security group ID instead of name
   key_name               = "db"
